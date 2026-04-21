@@ -1,0 +1,211 @@
+[gd_scene format=3 uid="uid://c5w5fmuqurwy2"]
+
+[ext_resource type="Script" uid="uid://dsf3bu3x64myh" path="res://Scripts/you_win.gd" id="1_1dtmv"]
+[ext_resource type="Texture2D" uid="uid://b4tb7n3cdevlj" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/background.png" id="1_vmhid"]
+[ext_resource type="Texture2D" uid="uid://131fgfqf8od8" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/fg_1.png" id="2_3dy3g"]
+[ext_resource type="Texture2D" uid="uid://d3xmlsp7m1ipg" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/bg_2.png" id="2_vmwke"]
+[ext_resource type="Texture2D" uid="uid://jk8eeqw5el7s" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/fg_0.png" id="3_vmwke"]
+[ext_resource type="Texture2D" uid="uid://bhbiym1xjy7xe" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/orb_anim_strip_6.png" id="5_vmwke"]
+[ext_resource type="AudioStream" uid="uid://cebyl3464rto3" path="res://Assets/Music/06 - Victory!.ogg" id="7_xcfl7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dtmv"]
+atlas = ExtResource("5_vmwke")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcfl7"]
+atlas = ExtResource("5_vmwke")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kwdl"]
+atlas = ExtResource("5_vmwke")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7h07"]
+atlas = ExtResource("5_vmwke")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2im08"]
+atlas = ExtResource("5_vmwke")
+region = Rect2(32, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sirm6"]
+atlas = ExtResource("5_vmwke")
+region = Rect2(40, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_36q8t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dtmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcfl7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kwdl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7h07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2im08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sirm6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="you_win" type="Control" unique_id=187505401]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1dtmv")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=76744871]
+self_modulate = Color(1, 1, 1, 0.38039216)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_vmhid")
+
+[node name="TextureRect3" type="TextureRect" parent="TextureRect" unique_id=873126863]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_vmwke")
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect" unique_id=547910715]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_vmwke")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect" unique_id=1781568450]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3dy3g")
+
+[node name="Label" type="Label" parent="." unique_id=618200705]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -219.0
+offset_top = 21.0
+offset_right = 219.0
+offset_bottom = 83.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "You Manage To Escape"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=1047797568]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 120.0
+offset_right = 786.0
+offset_bottom = 155.0
+theme_override_colors/font_color = Color(1, 0.64138085, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "Escape Bonus: 500"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="points_now" type="Label" parent="." unique_id=432339446]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 160.0
+offset_right = 786.0
+offset_bottom = 195.0
+theme_override_colors/font_color = Color(1, 0.6431373, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "Points Earned Now: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="points_now2" type="Label" parent="." unique_id=519850176]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 220.0
+offset_right = 786.0
+offset_bottom = 255.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Total Points: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="high_score" type="Label" parent="." unique_id=2053181236]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 303.0
+offset_right = 786.0
+offset_bottom = 338.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.93924534, 0.55858517, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "High Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1457400024]
+position = Vector2(332, 176.25)
+scale = Vector2(8.937498, 8.937498)
+sprite_frames = SubResource("SpriteFrames_36q8t")
+autoplay = "default"
+frame_progress = 0.27312738
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1131179796]
+position = Vector2(839, 176.25)
+scale = Vector2(8.937498, 8.937498)
+sprite_frames = SubResource("SpriteFrames_36q8t")
+autoplay = "default"
+frame_progress = 0.8038085
+
+[node name="Button" type="Button" parent="." unique_id=1026424641]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -182.25
+offset_top = -159.0
+offset_right = 182.25
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Back To Main Menu"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2124572658]
+stream = ExtResource("7_xcfl7")
+volume_db = -20.0
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

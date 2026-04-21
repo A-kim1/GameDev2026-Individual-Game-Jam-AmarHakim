@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://cuuee302rhuo1"]
+
+[ext_resource type="Script" uid="uid://d2e55150qjj21" path="res://Scripts/spike.gd" id="1_1hotg"]
+[ext_resource type="Texture2D" uid="uid://cl4rdtnymtoh" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/trap_spikes_anim_strip_7.png" id="1_cdj5a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hotg"]
+atlas = ExtResource("1_cdj5a")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mnih"]
+atlas = ExtResource("1_cdj5a")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhxds"]
+atlas = ExtResource("1_cdj5a")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khj5f"]
+atlas = ExtResource("1_cdj5a")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkk5q"]
+atlas = ExtResource("1_cdj5a")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ns7h"]
+atlas = ExtResource("1_cdj5a")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnvuw"]
+atlas = ExtResource("1_cdj5a")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qygh"]
+atlas = ExtResource("1_cdj5a")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bjemy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hotg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mnih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhxds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khj5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkk5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ns7h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnvuw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qygh")
+}],
+"loop": false,
+"name": &"trap",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdj5a"]
+size = Vector2(16, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1hotg"]
+size = Vector2(16, 16)
+
+[node name="spike" type="Node2D" unique_id=18082605]
+script = ExtResource("1_1hotg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1845519244]
+sprite_frames = SubResource("SpriteFrames_bjemy")
+animation = &"trap"
+frame = 6
+frame_progress = 1.0
+
+[node name="Trigger" type="Area2D" parent="." unique_id=683018894]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger" unique_id=623535428]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_cdj5a")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1355417060]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1786703999]
+shape = SubResource("RectangleShape2D_1hotg")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

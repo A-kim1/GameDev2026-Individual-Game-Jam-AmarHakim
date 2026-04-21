@@ -1,0 +1,188 @@
+[gd_scene format=3 uid="uid://dt1aefxnwj7w5"]
+
+[ext_resource type="Texture2D" uid="uid://b4tb7n3cdevlj" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/background.png" id="1_ce3w2"]
+[ext_resource type="Script" uid="uid://dyrhidphduags" path="res://Scripts/main_menu.gd" id="1_n45e2"]
+[ext_resource type="Texture2D" uid="uid://d3xmlsp7m1ipg" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/bg_2.png" id="2_n45e2"]
+[ext_resource type="Texture2D" uid="uid://131fgfqf8od8" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/fg_1.png" id="3_opfnp"]
+[ext_resource type="Texture2D" uid="uid://l3q534yghgkl" path="res://Assets/platformer_metroidvania asset pack v1.01/hud elements/select_icon_anim_strip_5.png" id="4_cp0ys"]
+[ext_resource type="AudioStream" uid="uid://dmh0tswbfq2ui" path="res://Assets/Music/22 - The Final of The Fantasy.ogg" id="6_opfnp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhxw7"]
+atlas = ExtResource("4_cp0ys")
+region = Rect2(0, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trj04"]
+atlas = ExtResource("4_cp0ys")
+region = Rect2(12, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16hvj"]
+atlas = ExtResource("4_cp0ys")
+region = Rect2(24, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vr1f0"]
+atlas = ExtResource("4_cp0ys")
+region = Rect2(36, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1dhk"]
+atlas = ExtResource("4_cp0ys")
+region = Rect2(48, 0, 12, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5egv6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhxw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trj04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16hvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vr1f0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1dhk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}]
+
+[node name="main_menu" type="Control" unique_id=757595102]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n45e2")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1512366352]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 240.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ce3w2")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect" unique_id=949521665]
+modulate = Color(1, 1, 1, 0.61960787)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_n45e2")
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect" unique_id=1160162836]
+modulate = Color(1, 1, 1, 0.6)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_opfnp")
+
+[node name="SelectIcon" type="AnimatedSprite2D" parent="." unique_id=222298193]
+texture_filter = 1
+position = Vector2(203, 283.99997)
+rotation = 1.5707964
+scale = Vector2(6.3333335, 6.3333335)
+sprite_frames = SubResource("SpriteFrames_5egv6")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.9213237
+
+[node name="Start" type="Button" parent="." unique_id=1563338121]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 325.0
+offset_right = 335.90646
+offset_bottom = 435.0
+theme_override_font_sizes/font_size = 50
+text = "Start"
+
+[node name="StageSelect" type="Button" parent="." unique_id=1862878185]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 451.0
+offset_right = 361.0
+offset_bottom = 561.0
+theme_override_font_sizes/font_size = 50
+text = "Stage Select"
+
+[node name="SelectIcon2" type="AnimatedSprite2D" parent="." unique_id=474618141]
+texture_filter = 1
+position = Vector2(572, 294)
+rotation = 1.5707964
+scale = Vector2(6.3333335, 6.3333335)
+sprite_frames = SubResource("SpriteFrames_5egv6")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.5290562
+
+[node name="Credit" type="Button" parent="." unique_id=1799305228]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 332.0
+offset_right = 729.0
+offset_bottom = 547.0
+theme_override_font_sizes/font_size = 50
+text = "Credit
+&
+Controls"
+
+[node name="SelectIcon3" type="AnimatedSprite2D" parent="." unique_id=2146129298]
+texture_filter = 1
+position = Vector2(954, 342)
+rotation = 1.5707964
+scale = Vector2(6.3333335, 6.3333335)
+sprite_frames = SubResource("SpriteFrames_5egv6")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.4020674
+
+[node name="Exit" type="Button" parent="." unique_id=804292745]
+layout_mode = 0
+offset_left = 799.0
+offset_top = 380.0
+offset_right = 1111.0
+offset_bottom = 519.0
+theme_override_font_sizes/font_size = 50
+text = "Exit"
+
+[node name="Label" type="Label" parent="." unique_id=834222579]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -396.5
+offset_top = -240.0
+offset_right = 396.5
+offset_bottom = -103.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.9137255, 0.67058825, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Get Some Points"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1768049369]
+stream = ExtResource("6_opfnp")
+volume_db = -20.0
+autoplay = true
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="StageSelect" to="." method="_on_stage_select_pressed"]
+[connection signal="pressed" from="Credit" to="." method="_on_credit_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

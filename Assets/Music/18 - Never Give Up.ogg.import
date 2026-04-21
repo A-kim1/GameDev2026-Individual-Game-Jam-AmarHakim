@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c53y4inu8pvqn"
+path="res://.godot/imported/18 - Never Give Up.ogg-b22d004046bd24c541c0d7f34abffe0c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Music/18 - Never Give Up.ogg"
+dest_files=["res://.godot/imported/18 - Never Give Up.ogg-b22d004046bd24c541c0d7f34abffe0c.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

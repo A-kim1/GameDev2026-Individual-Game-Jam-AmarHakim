@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://1urrhtxnxo67"]
+
+[ext_resource type="Texture2D" uid="uid://bxc8ix7rqg8f7" path="res://Assets/platformer_metroidvania asset pack v1.01/fauna sprites/bird_flying_anim_strip_3.png" id="1_i8bdw"]
+[ext_resource type="Script" uid="uid://dhbmwe7p2oocg" path="res://Scripts/bird.gd" id="1_mcegt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcegt"]
+atlas = ExtResource("1_i8bdw")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnvpi"]
+atlas = ExtResource("1_i8bdw")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vl8r2"]
+atlas = ExtResource("1_i8bdw")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rr33m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcegt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnvpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vl8r2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xf4a6"]
+size = Vector2(8, 6)
+
+[node name="bird" type="Area2D" unique_id=1915458694]
+scale = Vector2(1.799, 1.799)
+script = ExtResource("1_mcegt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1606211254]
+sprite_frames = SubResource("SpriteFrames_rr33m")
+autoplay = "default"
+frame_progress = 0.69181365
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=617705106]
+shape = SubResource("RectangleShape2D_xf4a6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

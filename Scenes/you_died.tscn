@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://dkxec3jadoteu"]
+
+[ext_resource type="Script" uid="uid://4u46kpeklu8" path="res://Scripts/control.gd" id="1_u18a2"]
+[ext_resource type="Texture2D" uid="uid://b4tb7n3cdevlj" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/background.png" id="2_n2g3v"]
+[ext_resource type="Texture2D" uid="uid://dhib277kdt4av" path="res://Assets/platformer_metroidvania asset pack v1.01/hud elements/lifes_icon.png" id="3_n2g3v"]
+[ext_resource type="AudioStream" uid="uid://c53y4inu8pvqn" path="res://Assets/Music/18 - Never Give Up.ogg" id="4_03wjt"]
+
+[node name="you_died" type="Control" unique_id=636360632]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u18a2")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1700874474]
+self_modulate = Color(1, 0.7, 0.7, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_n2g3v")
+
+[node name="Label" type="Label" parent="." unique_id=246855897]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -343.2586
+offset_top = 43.0
+offset_right = 343.2586
+offset_bottom = 215.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 70
+text = "YOU DIED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LifesIcon" type="Sprite2D" parent="." unique_id=374461343]
+position = Vector2(333, 127)
+scale = Vector2(6.5624986, 6.5624986)
+texture = ExtResource("3_n2g3v")
+
+[node name="Button" type="Button" parent="." unique_id=1576468581]
+texture_filter = 1
+layout_mode = 0
+offset_left = 397.0
+offset_top = 497.0
+offset_right = 736.0
+offset_bottom = 608.0
+theme_override_font_sizes/font_size = 30
+text = "Back To Main Menu"
+
+[node name="points_now" type="Label" parent="." unique_id=936496694]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 228.0
+offset_right = 748.0
+offset_bottom = 263.0
+theme_override_colors/font_color = Color(0.33183005, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="high_score" type="Label" parent="." unique_id=192948632]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 327.0
+offset_right = 748.0
+offset_bottom = 362.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "High Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1708642678]
+stream = ExtResource("4_03wjt")
+volume_db = -20.0
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

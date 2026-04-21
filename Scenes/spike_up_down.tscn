@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c5nd7qrrlvmvm"]
+
+[ext_resource type="Script" uid="uid://dkttfkdqtyrek" path="res://Scripts/spike_up_down.gd" id="1_hoook"]
+[ext_resource type="Texture2D" uid="uid://drecxgh1ffp5f" path="res://icon.svg" id="2_hoook"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hoook"]
+size = Vector2(16, 16)
+
+[node name="SpikeUpDown" type="Area2D" unique_id=2078400122]
+script = ExtResource("1_hoook")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1660954342]
+texture_filter = 1
+scale = Vector2(0.12324327, 0.12324327)
+texture = ExtResource("2_hoook")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1613545872]
+shape = SubResource("RectangleShape2D_hoook")

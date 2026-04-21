@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c211n70c1c0nv"]
+
+[ext_resource type="Texture2D" uid="uid://diljrn2i8s4w8" path="res://Assets/platformer_metroidvania asset pack v1.01/hud elements/health_hud_middle.png" id="1_bngtt"]
+[ext_resource type="Script" uid="uid://b2lkpblybes2h" path="res://Scripts/healthbar.gd" id="1_lv041"]
+[ext_resource type="Texture2D" uid="uid://b5isecjrktnud" path="res://Assets/platformer_metroidvania asset pack v1.01/hud elements/health_hud_left.png" id="2_lv041"]
+[ext_resource type="Texture2D" uid="uid://coi78wdmam2gj" path="res://Assets/platformer_metroidvania asset pack v1.01/hud elements/health_hud_right.png" id="3_ilck6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bngtt"]
+bg_color = Color(0.9971877, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lv041"]
+bg_color = Color(0, 1, 0.60038817, 1)
+
+[node name="Healthbar" type="ProgressBar" unique_id=289315156]
+offset_left = -36.0
+offset_right = 40.0
+offset_bottom = 27.0
+size_flags_horizontal = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_bngtt")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lv041")
+value = 60.0
+show_percentage = false
+script = ExtResource("1_lv041")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=115195884]
+position = Vector2(39, 13.500001)
+scale = Vector2(2.75, 2.6875)
+texture = ExtResource("1_bngtt")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1096465510]
+position = Vector2(13.125002, 13.499999)
+scale = Vector2(2.640625, 2.6874998)
+texture = ExtResource("2_lv041")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1672618243]
+position = Vector2(62.75, 13.499998)
+scale = Vector2(2.6562498, 2.6874998)
+texture = ExtResource("3_ilck6")

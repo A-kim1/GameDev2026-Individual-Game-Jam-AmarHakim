@@ -1,0 +1,164 @@
+[gd_scene format=3 uid="uid://75g2ygh6ijeh"]
+
+[ext_resource type="Script" uid="uid://f7ex7g3n3foe" path="res://Scripts/credit.gd" id="1_37nl1"]
+[ext_resource type="Texture2D" uid="uid://b4tb7n3cdevlj" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/background.png" id="1_k1f8w"]
+[ext_resource type="Texture2D" uid="uid://d3xmlsp7m1ipg" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/bg_2.png" id="2_37nl1"]
+[ext_resource type="Texture2D" uid="uid://131fgfqf8od8" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/fg_1.png" id="3_nto78"]
+[ext_resource type="Texture2D" uid="uid://nithhxxnc6yg" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/orb.png" id="5_nto78"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37nl1"]
+bg_color = Color(0, 0.40392157, 0.6, 0.38039216)
+
+[node name="credit" type="Control" unique_id=888777854]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_37nl1")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1686483182]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 240.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_k1f8w")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect" unique_id=67685749]
+modulate = Color(1, 1, 1, 0.61960787)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_37nl1")
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect" unique_id=773688528]
+modulate = Color(1, 1, 1, 0.6)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_nto78")
+
+[node name="Panel" type="Panel" parent="." unique_id=857387701]
+texture_filter = 1
+layout_mode = 0
+offset_left = 83.0
+offset_top = 29.0
+offset_right = 1060.0
+offset_bottom = 508.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_37nl1")
+
+[node name="Node2D" type="Node2D" parent="Panel" unique_id=1721634015]
+position = Vector2(-83, -29)
+
+[node name="Label" type="Label" parent="Panel/Node2D" unique_id=1533304983]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 191.5
+offset_top = 108.0
+offset_right = 993.5
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "https://o-lobster.itch.io/platformmetroidvania-pixel-art-asset-pack"
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/Node2D" unique_id=582313338]
+position = Vector2(149, 126)
+scale = Vector2(7.5, 7.5)
+texture = ExtResource("5_nto78")
+
+[node name="Node2D2" type="Node2D" parent="Panel" unique_id=2008553040]
+position = Vector2(-83, 40)
+
+[node name="Label" type="Label" parent="Panel/Node2D2" unique_id=1696125222]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 191.5
+offset_top = 108.0
+offset_right = 993.5
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "https://xdeviruchi.itch.io/16-bit-fantasy-adventure-music-pack"
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/Node2D2" unique_id=55757471]
+position = Vector2(149, 126)
+scale = Vector2(7.5, 7.5)
+texture = ExtResource("5_nto78")
+
+[node name="Panel2" type="Panel" parent="Panel" unique_id=1988687740]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 327.0
+offset_right = 638.0
+offset_bottom = 464.4359
+
+[node name="Label" type="Label" parent="Panel/Panel2" unique_id=748556315]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.5
+offset_top = -68.0
+offset_right = 142.5
+offset_bottom = -36.717957
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9767943, 0.6419529, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Game Controls:"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="Panel/Panel2" unique_id=1472789543]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -37.0
+offset_right = 152.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 0.17923622, 1)
+text = "-  WASD or Arrow keys to move
+-  Space to use skill
+-  \"J\" or Left click to attack
+-  Shift to run
+"
+uppercase = true
+
+[node name="main_menu" type="Button" parent="." unique_id=1960427568]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 536.0
+offset_right = 714.0
+offset_bottom = 623.0
+text = "Go Back"
+
+[connection signal="pressed" from="main_menu" to="." method="_on_main_menu_pressed"]

@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://duuptdrli0hy7"]
+
+[ext_resource type="Texture2D" uid="uid://x1d5gpc32jnq" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/buttom.png" id="1_0kpiu"]
+[ext_resource type="Script" uid="uid://26t2bju411xb" path="res://Scripts/button.gd" id="1_smycg"]
+[ext_resource type="Texture2D" uid="uid://brkyll1u8p37r" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/buttom_pressed.png" id="2_smycg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iju5o"]
+atlas = ExtResource("1_0kpiu")
+region = Rect2(0, 0, 16, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edukx"]
+atlas = ExtResource("1_0kpiu")
+region = Rect2(0, 0, 16, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svtet"]
+atlas = ExtResource("2_smycg")
+region = Rect2(0, 0, 16, 4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nrk2b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iju5o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edukx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svtet")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4mwi"]
+size = Vector2(16, 4)
+
+[node name="button" type="Area2D" unique_id=1841383467]
+script = ExtResource("1_smycg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1287318415]
+sprite_frames = SubResource("SpriteFrames_nrk2b")
+animation = &"pressed"
+frame_progress = 0.54350054
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1477392038]
+shape = SubResource("RectangleShape2D_c4mwi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

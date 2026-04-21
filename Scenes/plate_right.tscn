@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://p1hgrlg205a1"]
+
+[ext_resource type="Texture2D" uid="uid://bk6v67leqfo0u" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/arrow_plate_right.png" id="1_87s34"]
+
+[node name="PlateRight" type="Sprite2D" unique_id=1252233948]
+texture_filter = 1
+texture = ExtResource("1_87s34")

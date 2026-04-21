@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cwmc6bcp0ju2k"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3mh7d"]
+load_path = "res://.godot/imported/background.png-9a4c135f70580da56403986df66f1e9b.ctex"
+
+[node name="ParallaxBackground" type="ParallaxBackground" unique_id=1133208937]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="." unique_id=1281027257]
+motion_mirroring = Vector2(240, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer" unique_id=941213028]
+texture = SubResource("CompressedTexture2D_3mh7d")

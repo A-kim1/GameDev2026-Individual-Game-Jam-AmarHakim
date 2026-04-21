@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dmh0tswbfq2ui"
+path="res://.godot/imported/22 - The Final of The Fantasy.ogg-593fa25654fec04ff398916fb559d28e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Music/22 - The Final of The Fantasy.ogg"
+dest_files=["res://.godot/imported/22 - The Final of The Fantasy.ogg-593fa25654fec04ff398916fb559d28e.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

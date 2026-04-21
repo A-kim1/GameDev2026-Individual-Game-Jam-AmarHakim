@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b8ws0y5a25km1"]
+
+[ext_resource type="Script" uid="uid://ty7uf1t8ql87" path="res://Scripts/health_potion.gd" id="1_x2qfu"]
+[ext_resource type="Texture2D" uid="uid://ctwmcg26e642e" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/health_potion.png" id="2_petj4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttnbf"]
+size = Vector2(8, 10)
+
+[node name="health_potion" type="Area2D" unique_id=214659231]
+script = ExtResource("1_x2qfu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=663259730]
+texture = ExtResource("2_petj4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=891172954]
+shape = SubResource("RectangleShape2D_ttnbf")
