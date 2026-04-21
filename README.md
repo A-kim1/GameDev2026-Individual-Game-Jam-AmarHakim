@@ -105,7 +105,7 @@ Implementasi inti:
 Catatan:
 - Spawner `2` ada sedikit beda implementasi dibanding lainnya
 - Spawner `1/3/4/5` mirip pola (spawn ke parent level)
-- Perbedaan ini dibiarkan sebagai jejak perkembangan kode
+- Perbedaan ini aku biarin buat jejak perkembangan kode nya gitu
 
 ### UI dan Menu
 - `Scripts/main_menu.gd`
@@ -135,7 +135,3 @@ Catatan:
 1. Buka Godot 4.6
 2. Import folder project ini
 3. Jalankan project (main scene: `main_menu`)
-
-## Catatan Pengembangan
-- Style komentar di script dibuat simpel dan santai biar gampang dipelajari
-- Fokus project ini bukan cuma hasil akhir game, tapi juga nunjukkin progres coding dari awal sampai sekarang
