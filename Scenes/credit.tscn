@@ -59,7 +59,7 @@ offset_bottom = 508.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_37nl1")
 
 [node name="Node2D" type="Node2D" parent="Panel" unique_id=1721634015]
-position = Vector2(-83, -29)
+position = Vector2(-83, -85)
 
 [node name="Label" type="Label" parent="Panel/Node2D" unique_id=1533304983]
 texture_filter = 1
@@ -76,6 +76,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
 text = "https://o-lobster.itch.io/platformmetroidvania-pixel-art-asset-pack"
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel/Node2D" unique_id=582313338]
 position = Vector2(149, 126)
@@ -83,7 +84,7 @@ scale = Vector2(7.5, 7.5)
 texture = ExtResource("5_nto78")
 
 [node name="Node2D2" type="Node2D" parent="Panel" unique_id=2008553040]
-position = Vector2(-83, 40)
+position = Vector2(-83, -16)
 
 [node name="Label" type="Label" parent="Panel/Node2D2" unique_id=1696125222]
 texture_filter = 1
@@ -100,8 +101,59 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
 text = "https://xdeviruchi.itch.io/16-bit-fantasy-adventure-music-pack"
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel/Node2D2" unique_id=55757471]
+position = Vector2(149, 126)
+scale = Vector2(7.5, 7.5)
+texture = ExtResource("5_nto78")
+
+[node name="Node2D3" type="Node2D" parent="Panel" unique_id=1705613678]
+position = Vector2(-83, 60)
+
+[node name="Label" type="Label" parent="Panel/Node2D3" unique_id=1883259307]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 191.5
+offset_top = 108.0
+offset_right = 993.5
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "https://edermunizz.itch.io/free-pixel-art-forest"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/Node2D3" unique_id=376075947]
+position = Vector2(149, 126)
+scale = Vector2(7.5, 7.5)
+texture = ExtResource("5_nto78")
+
+[node name="Node2D4" type="Node2D" parent="Panel" unique_id=1217638080]
+position = Vector2(-83, 129)
+
+[node name="Label" type="Label" parent="Panel/Node2D4" unique_id=1422584026]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 191.5
+offset_top = 108.0
+offset_right = 993.5
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "https://chierit.itch.io/boss-demon-slime"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/Node2D4" unique_id=907525661]
 position = Vector2(149, 126)
 scale = Vector2(7.5, 7.5)
 texture = ExtResource("5_nto78")

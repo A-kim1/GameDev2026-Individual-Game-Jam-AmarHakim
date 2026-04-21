@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cogg6fsex21c0"
-path="res://.godot/imported/Mockup.png-63627329498c663d0a9c384f296abd25.ctex"
+uid="uid://dos4numolc0o7"
+path="res://.godot/imported/Layer_0006_4.png-ce1dbc44d12231c17396fad70dd48d63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Fantasy Swamp Forest/Free/Mockup.png"
-dest_files=["res://.godot/imported/Mockup.png-63627329498c663d0a9c384f296abd25.ctex"]
+source_file="res://Assets/Free Pixel Art Forest/PNG/Background layers/Layer_0006_4.png"
+dest_files=["res://.godot/imported/Layer_0006_4.png-ce1dbc44d12231c17396fad70dd48d63.ctex"]
 
 [params]
 

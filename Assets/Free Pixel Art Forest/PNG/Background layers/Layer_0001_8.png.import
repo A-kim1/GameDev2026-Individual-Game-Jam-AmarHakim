@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vardoyrtq07q"
-path="res://.godot/imported/BG_3.png-9da11a5386790ff3c43eb0cd44037469.ctex"
+uid="uid://u85jqehhdeak"
+path="res://.godot/imported/Layer_0001_8.png-85e83a18baaa5064e07d87cdbebadcf5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Fantasy Swamp Forest/Free/BG_3/BG_3.png"
-dest_files=["res://.godot/imported/BG_3.png-9da11a5386790ff3c43eb0cd44037469.ctex"]
+source_file="res://Assets/Free Pixel Art Forest/PNG/Background layers/Layer_0001_8.png"
+dest_files=["res://.godot/imported/Layer_0001_8.png-85e83a18baaa5064e07d87cdbebadcf5.ctex"]
 
 [params]
 
