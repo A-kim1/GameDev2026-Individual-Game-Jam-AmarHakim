@@ -19,7 +19,8 @@ func show_menu():
 
 func _on_yes_pressed():
 	get_tree().paused = false
-	SceneTransition.load_scene("res://Scenes/you_win.tscn")
+	#SceneTransition.load_scene("res://Scenes/you_win.tscn")
+	SceneTransition.load_scene("res://Scenes/boss_level.tscn")
 
 
 func _on_no_pressed():

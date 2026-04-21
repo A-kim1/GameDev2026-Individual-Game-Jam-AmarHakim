@@ -3,7 +3,7 @@ extends Node2D
 # Setup awal level (init)
 func _ready():
 	get_tree().root.content_scale_factor = 5.0
-	GameManager.points = 0
+	GameManager.reset_points()
 	_apply_difficulty_to_spawners()
 
 

@@ -6,9 +6,10 @@ extends CanvasLayer
 func _ready():
 	GameManager.points_changed.connect(_on_points_changed)
 	GameManager.skill_cooldown_changed.connect(_on_skill_cooldown_changed)
-	
-	# Label skill di awal2
-	skill_label.text = "Skill Ready"
+
+	# Sync nilai awal saat HUD baru dibuat di scene manapun.
+	_on_points_changed(GameManager.get_points())
+	_on_skill_cooldown_changed(0)
 
 func _on_points_changed(new_points):
 	points_label.text = "Points: " + str(new_points)
