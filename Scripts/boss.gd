@@ -33,6 +33,9 @@ var pending_release_invincible_on_attack := false
 @onready var attack_timer = $AttackTimer
 @onready var damage_area = $DamageToPlayer
 
+# Camera shake
+var camera2D : Camera2D
+var cameraShakeNoise : FastNoiseLite
 
 func _ready():
 	health = max_health
@@ -53,8 +56,27 @@ func _ready():
 	damage_area.scale.x = 1
 	can_take_damage = true
 	pending_release_invincible_on_attack = false
+	
+	# Camera Shake
+	camera2D = get_viewport().get_camera_2d()
+	if camera2D == null:
+		if is_instance_valid(player):
+			camera2D = player.get_node_or_null("Camera2D")
+		if camera2D == null:
+			camera2D = get_node_or_null("/root/Root/Player/Camera2D")
+	cameraShakeNoise = FastNoiseLite.new()
 
-
+func startCameraShake(intensity : float):
+	if not is_instance_valid(camera2D):
+		camera2D = get_viewport().get_camera_2d()
+	
+	if not is_instance_valid(camera2D):
+		return
+		
+	var cameraOffset = cameraShakeNoise.get_noise_1d(Time.get_ticks_msec() * intensity)
+	camera2D.offset.x = cameraOffset
+	camera2D.offset.y = cameraOffset
+	
 func _physics_process(delta):
 	if is_dead:
 		return
@@ -118,6 +140,11 @@ func start_attack():
 	attack_has_hit = false
 	anim.play("attack")
 	update_attack_window()
+	
+	await get_tree().create_timer(1.5).timeout 
+	# Camera Shake
+	var camera_tween = get_tree().create_tween()
+	camera_tween.tween_method(startCameraShake, 100.0, 50.0, 0.2)
 
 
 func update_attack_window():
@@ -241,7 +268,6 @@ func take_damage(amount, source_position):
 
 	if post_hit_invincible_time > 0.0:
 		await get_tree().create_timer(post_hit_invincible_time).timeout
-
 
 func die():
 	if is_dead:

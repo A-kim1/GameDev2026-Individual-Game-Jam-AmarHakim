@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://51osf0nyrdsd" path="res://Assets/Free Pixel Art Forest/PNG/Background layers/Layer_0008_3.png" id="7_bg2"]
 [ext_resource type="Texture2D" uid="uid://dos4numolc0o7" path="res://Assets/Free Pixel Art Forest/PNG/Background layers/Layer_0006_4.png" id="8_bg3"]
 [ext_resource type="Texture2D" uid="uid://02bgxuhsh257" path="res://Assets/Free Pixel Art Forest/PNG/Background layers/Layer_0005_5.png" id="9_bg4"]
+[ext_resource type="AudioStream" uid="uid://b7gdotcl3of1t" path="res://Assets/Music/17 - Decisive Battle 2 - The Calamity.ogg" id="10_hsic4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8popx"]
 texture = ExtResource("1_14uhd")
@@ -564,7 +565,7 @@ tile_set = SubResource("TileSet_d5ou2")
 position = Vector2(623, 53)
 
 [node name="boss2" parent="." unique_id=1742694253 instance=ExtResource("2_8popx")]
-position = Vector2(623, 53)
+position = Vector2(297, 50)
 
 [node name="LeftBoundary" type="StaticBody2D" parent="." unique_id=748345709]
 
@@ -621,3 +622,8 @@ theme_override_font_sizes/font_size = 4
 text = "SkillCooldown: 8"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=1463416042]
+stream = ExtResource("10_hsic4")
+volume_db = -20.0
+autoplay = true
