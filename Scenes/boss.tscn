@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cqm4nfrdnf531" path="res://Assets/boss_demon_slime_FREE_v1.0/spritesheets/demon_slime_FREE_v1.0_288x160_spritesheet.png" id="1_0154r"]
 [ext_resource type="Script" uid="uid://bb6jfl78ve6ya" path="res://Scripts/boss.gd" id="1_boss"]
+[ext_resource type="PackedScene" uid="uid://b2wbg341u3rxx" path="res://Scenes/boss_healthbar.tscn" id="3_cxrok"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0154r"]
 atlas = ExtResource("1_0154r")
@@ -494,6 +495,14 @@ shape = SubResource("RectangleShape2D_0154r")
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=2071183044]
 one_shot = true
+
+[node name="boss_healthbar" parent="." unique_id=1812040399 instance=ExtResource("3_cxrok")]
+z_index = 1
+offset_left = -28.000004
+offset_top = 87.0
+offset_right = 121.0
+offset_bottom = 114.0
+scale = Vector2(0.45884502, 0.45884502)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_anim_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_anim_frame_changed"]

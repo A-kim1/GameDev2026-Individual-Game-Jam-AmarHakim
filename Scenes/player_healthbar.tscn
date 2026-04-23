@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://ch0n6f52qp3l"]
+
+[ext_resource type="Script" uid="uid://rdu0f0yrwvwm" path="res://Scripts/player_healthbar.gd" id="1_t3ht1"]
+[ext_resource type="Texture2D" uid="uid://bpig3yr1b7vnj" path="res://Assets/HP/bubbly bar.png" id="1_yv8yq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yv8yq"]
+bg_color = Color(0.98039216, 0.5647059, 0.70980394, 0.8627451)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3ht1"]
+atlas = ExtResource("1_yv8yq")
+region = Rect2(0, 7, 128, 29)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p1b4m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3ht1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yv8yq"]
+atlas = ExtResource("1_yv8yq")
+region = Rect2(0, 35, 128, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t3ht1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yv8yq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="player_healthbar" type="ProgressBar" unique_id=83336779]
+offset_left = -84.0
+offset_right = 26.0
+offset_bottom = 27.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_yv8yq")
+value = 60.0
+rounded = true
+show_percentage = false
+script = ExtResource("1_t3ht1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1780695921]
+position = Vector2(33.999996, 15.999999)
+scale = Vector2(1.4568965, 1.4568965)
+sprite_frames = SubResource("SpriteFrames_p1b4m")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1405240001]
+z_index = -1
+position = Vector2(33, 15)
+scale = Vector2(1.4642857, 1.4642857)
+sprite_frames = SubResource("SpriteFrames_t3ht1")

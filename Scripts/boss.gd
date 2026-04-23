@@ -241,23 +241,26 @@ func take_damage(amount, source_position):
 
 	health -= amount
 
+	# ENRAGE MODE: HP <= 50%
+	if health <= max_health / 2.0:
+		attack_timer.wait_time = attack_interval / 2.0
+		anim.speed_scale = 1.5
+		modulate = Color(1.0, 0.6, 0.6) # Buat jadi kemerahan, tanda rage nya gitu
+
 	if health <= 0:
 		die()
 		return
 
 	can_take_damage = false
 	pending_release_invincible_on_attack = invincible_until_next_attack
-	is_hurt = true
-	is_attacking = false
-	player_in_range = false
-	attack_damage_window_open = false
-	attack_has_hit = false
-	attack_timer.stop()
-	anim.play("hit")
-	velocity.x = 0
-
-	await get_tree().create_timer(hurt_time).timeout
-	is_hurt = false
+	
+	# Flash putih buat ganti animasi hit (Boss punya super armor/gak flinch)
+	var tween = create_tween()
+	tween.tween_property(self, "modulate", Color(5, 5, 5), 0.1)
+	if health <= max_health / 2.0:
+		tween.tween_property(self, "modulate", Color(1.0, 0.6, 0.6), 0.1)
+	else:
+		tween.tween_property(self, "modulate", Color(1, 1, 1), 0.1)
 
 	if not invincible_until_next_attack:
 		if post_hit_invincible_time > 0.0:

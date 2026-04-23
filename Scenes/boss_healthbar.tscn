@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b2wbg341u3rxx"]
+
+[ext_resource type="Script" uid="uid://cxnk4kr5yrlcv" path="res://Scripts/boss_healthbar.gd" id="1_hxa44"]
+[ext_resource type="Texture2D" uid="uid://csu66uunxkmjg" path="res://Assets/HP/skulls.png" id="2_hxa44"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0e5s7"]
+bg_color = Color(0.43338436, 0, 0.11014447, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hxa44"]
+bg_color = Color(0.68237287, 1.9131974e-06, 8.663535e-07, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4o5vs"]
+atlas = ExtResource("2_hxa44")
+region = Rect2(0, 0, 128, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uo6lw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4o5vs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="boss_healthbar" type="ProgressBar" unique_id=1812040399]
+offset_right = 149.0
+offset_bottom = 27.0
+theme_override_styles/background = SubResource("StyleBoxFlat_0e5s7")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hxa44")
+value = 60.0
+show_percentage = false
+script = ExtResource("1_hxa44")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1305162314]
+position = Vector2(72, 8)
+scale = Vector2(2.2890627, 2.2890627)
+sprite_frames = SubResource("SpriteFrames_uo6lw")

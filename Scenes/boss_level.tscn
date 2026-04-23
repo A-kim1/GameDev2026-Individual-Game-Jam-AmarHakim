@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://chbjek28ebywu"]
 
 [ext_resource type="Texture2D" uid="uid://b6sus2l83uxwe" path="res://Assets/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/tileset.png" id="1_14uhd"]
+[ext_resource type="Script" uid="uid://cjonao3enbxmk" path="res://Scripts/boss_level.gd" id="1_script_bl"]
 [ext_resource type="PackedScene" uid="uid://c5wtsjisn7vgt" path="res://Scenes/boss.tscn" id="2_8popx"]
 [ext_resource type="PackedScene" uid="uid://5hu6310gll0l" path="res://Scenes/player.tscn" id="3_d5ou2"]
 [ext_resource type="Script" uid="uid://cqynju1s4dlcr" path="res://Scripts/hud.gd" id="4_12ifi"]
@@ -10,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dos4numolc0o7" path="res://Assets/Free Pixel Art Forest/PNG/Background layers/Layer_0006_4.png" id="8_bg3"]
 [ext_resource type="Texture2D" uid="uid://02bgxuhsh257" path="res://Assets/Free Pixel Art Forest/PNG/Background layers/Layer_0005_5.png" id="9_bg4"]
 [ext_resource type="AudioStream" uid="uid://b7gdotcl3of1t" path="res://Assets/Music/17 - Decisive Battle 2 - The Calamity.ogg" id="10_hsic4"]
+[ext_resource type="PackedScene" uid="uid://bgdcdff6kvl0k" path="res://Scenes/portal.tscn" id="11_rg183"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8popx"]
 texture = ExtResource("1_14uhd")
@@ -472,7 +474,11 @@ size = Vector2(32.5, 419)
 bg_color = Color(0, 0, 0, 0.44705883)
 corner_detail = 2
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1eduo"]
+size = Vector2(22, 89)
+
 [node name="boss_level" type="Node2D" unique_id=509991102]
+script = ExtResource("1_script_bl")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=226048390]
 scale = Vector2(1.5, 1.5)
@@ -562,7 +568,7 @@ tile_map_data = PackedByteArray("AAABAAkAAAABAAEAAAACAAkAAAABAAEAAAABAAoAAAABAAE
 tile_set = SubResource("TileSet_d5ou2")
 
 [node name="boss" parent="." unique_id=944510790 instance=ExtResource("2_8popx")]
-position = Vector2(623, 53)
+position = Vector2(444, 53)
 
 [node name="boss2" parent="." unique_id=1742694253 instance=ExtResource("2_8popx")]
 position = Vector2(297, 50)
@@ -578,6 +584,13 @@ shape = SubResource("RectangleShape2D_d5ou2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightBoundary" unique_id=1555172341]
 position = Vector2(1383, 91)
 shape = SubResource("RectangleShape2D_12ifi")
+
+[node name="RightBoundary2" type="StaticBody2D" parent="." unique_id=296920077]
+position = Vector2(1918, 44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBoundary2" unique_id=745431905]
+position = Vector2(-250, 75)
+shape = SubResource("RectangleShape2D_d5ou2")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=681044381]
 scale = Vector2(1.5, 1.5)
@@ -627,3 +640,20 @@ vertical_alignment = 1
 stream = ExtResource("10_hsic4")
 volume_db = -20.0
 autoplay = true
+
+[node name="Finish" type="Node" parent="." unique_id=1765382787]
+
+[node name="detectPlayer" type="Area2D" parent="Finish" unique_id=1075940692]
+position = Vector2(1383, 92)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish/detectPlayer" unique_id=117918855]
+position = Vector2(5, 0.5)
+shape = SubResource("RectangleShape2D_1eduo")
+
+[node name="portal" parent="Finish" unique_id=1142312588 instance=ExtResource("11_rg183")]
+z_index = -1
+position = Vector2(1503, 107)
+scale = Vector2(0.18839027, 0.18839027)
+
+[connection signal="body_entered" from="Finish/detectPlayer" to="." method="_on_detect_player_entered"]
+[connection signal="body_entered" from="Finish/portal" to="." method="_on_portal_entered"]
