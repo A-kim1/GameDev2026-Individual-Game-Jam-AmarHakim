@@ -9,6 +9,10 @@ func _ready() -> void:
 # Transisi scene (scene transition)
 # Utk pindah ke scene tujuan pakai fade biasa
 func load_scene(target_scene: String):
+	var players = get_tree().get_nodes_in_group("player")
+	if players.size() > 0:
+		Global.player_health = players[0].health
+		
 	animation_player.play("fade")
 	await animation_player.animation_finished
 	get_tree().change_scene_to_file(target_scene)
@@ -16,6 +20,7 @@ func load_scene(target_scene: String):
 
 # Utk reload scene aktif (restart level)
 func reload_scene():
+	Global.player_health = -1
 	animation_player.play("fade")
 	await animation_player.animation_finished
 	get_tree().reload_current_scene()
@@ -23,6 +28,7 @@ func reload_scene():
 
 # Utk transisi pas player mati
 func death_scene():
+	Global.player_health = -1
 	animation_player.play("fade_death")
 	await animation_player.animation_finished
 	get_tree().change_scene_to_file("res://Scenes/you_died.tscn")

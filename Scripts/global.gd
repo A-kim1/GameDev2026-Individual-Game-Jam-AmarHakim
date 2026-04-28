@@ -18,6 +18,8 @@ var skip_tutorial: bool = false
 var selected_difficulty: String = DIFFICULTY_EASY
 var wave_start_multiplier: int = 1
 
+var player_health: int = -1
+
 
 func set_skip_tutorial(value: bool) -> void:
 	# Toggle dari stage select: ON artinya langsung skip tutorial

@@ -1,137 +1,91 @@
-# Get Some Points
+# Get Some Points! 🎮
 
-Game platformer 2D bertema bertahan hidup sambil ngumpulin poin
-Player harus melewati rintangan, ngalahin musuh, dan survive sampai akhir level
+Game platformer 2D bertema *survive* sambil ngumpulin poin sebanyak-banyaknya! Di game ini, player bakal ngelewatin berbagai rintangan, ngalahin musuh, dan bertahan hidup sampai akhir level (nanti di akhir ada lawan boss juga).
 
-## Ringkasan Game
-- Genre: 2D Platformer / Action
-- Engine: Godot 4.6 (GL Compatibility)
-- Tujuan utama: dapet poin sebanyak mungkin dan selesain run
-- Kondisi kalah: player mati -> masuk scene `you_died`
-- Kondisi menang: lolos level/escape -> masuk scene `you_win`
+## 📖 Ringkasan Game
+- **Genre:** 2D Platformer / Action
+- **Engine:** Godot 4.6 (GL Compatibility)
+- **Tujuan Utama:** Ngumpulin poin sebanyak mungkin dan selesaiin run dengan selamat.
+- **Kondisi Kalah:** Player kehabisan darah -> Masuk ke layar `you_died`.
+- **Kondisi Menang:** Berhasil kabur atau ngelewatin rintangan akhir -> Masuk ke layar `you_win`.
 
-## Fitur Utama
-- Movement: jalan, lari, lompat, double jump
-- Combat: basic attack + skill slash dengan cooldown
-- Enemy system: bat, slime, goblin dengan behavior masing-masing
-- Wave spawner: musuh spawn per wave dengan growth multiplier
-- Trap/hazard: spike dan spike up/down
-- Scoring system: poin dari kill musuh + coin + bonus finish
-- High score tersimpan selama game jalan (via autoload `Global`)
-- Stage Select:
-  - Toggle skip tutorial (ON/OFF)
-  - Pilih difficulty (Easy/Normal/Hard)
+## ✨ Fitur
+- **Movement:** Jalan, lari, lompat, sampai *double jump*!
+- **Combat:** Basic attack + Skill slash (ada *cooldown*-nya ya biar gak spam akill terus).
+- **Enemy System:** Ada Bat, Slime, sampai Goblin yang punya gaya nyerang beda-beda.
+- **Wave Spawner:** Musuh bakal nge-spawn per *wave*, dan makin susah seiring berjalannya level.
+- **Trap/Hazard:** Hati-hati sama Spike (Duri) yang bisa muncul tiba-tiba atau naik-turun.
+- **Scoring System:** Dapet poin dari ngebunuh musuh, mungut koin, dan bonus kalau berhasil finish.
+- **High Score:** Skor tertinggimu bakal selalu kesimpen selama game jalan (pakai sistem *autoload* `Global`).
+- **Stage Select & Difficulty:**
+  - Mau skip tutorial? Bisa banget!
+  - Pilih tingkat kesulitan: *Easy*, *Normal*, atau *Hard*. Makin susah, musuh yang spawn di awal makin rame!
+- **Persistent Health:** Nyawa kamu bakal nyambung terus antar level (misal dari Level 1 ke Boss Level). Jadi kalau kamu masuk Boss Level dengan darah sekarat, ya... good luck!
 
-## Kontrol
-Diambil dari `project.godot` input map:
-- `A` / `Left Arrow`: gerak kiri
-- `D` / `Right Arrow`: gerak kanan
-- `W` / `Up Arrow`: lompat
-- `Shift`: lari
-- `J` / Mouse Left: attack
-- `Space`: skill
+## 🎮 Kontrol Game
+Biar nggak bingung, ini kontrol default-nya (bisa dicek juga di *input map* Godot):
+- `A` / `Panah Kiri`: Jalan ke kiri
+- `D` / `Panah Kanan`: Jalan ke kanan
+- `W` / `Panah Atas`: Lompat (Tekan 2x buat *Double Jump*)
+- `Shift`: Lari (*Sprint*)
+- `J` / *Klik Kiri Mouse*: Serang (*Basic Attack*)
+- `Spasi`: Jurus Slash (*Skill*)
 
-## Alur Scene
-1. `main_menu`
-2. Pilih salah satu:
-   - `Start` -> `tutorial`
-   - `Stage Select` -> `stage_select`
-3. Dari `stage_select`:
-   - Set skip tutorial
-   - Set difficulty
-   - Jika skip ON -> `level_1`
-   - Jika skip OFF -> `tutorial` dulu
-4. Di akhir run:
-   - Mati -> `you_died`
-   - Berhasil escape -> `you_win`
+## 🗺️ Alur Main (Flow)
+1. Buka game -> **Main Menu** (`main_menu`).
+2. Pilih jalanmu:
+   - Klik `Start` -> Langsung masuk **Tutorial** (`tutorial`).
+   - Klik `Stage Select` -> Milih level dan *setting* dulu (`stage_select`).
+3. Di **Stage Select**:
+   - Bisa *toggle* mau skip tutorial atau nggak.
+   - Atur mau seberapa gila musuhnya (Easy/Normal/Hard).
+   - Kalau skip tutorial *ON*, langsung gas ke `level_1`. Kalau *OFF*, mampir tutorial dulu.
+4. Akhir perjalanan:
+   - Darah abis -> **Game Over** (`you_died`).
+   - Berhasil tembus -> **Menang!** (`you_win`).
 
-## Sistem Difficulty
-Difficulty disimpan di autoload `Global` lalu dipakai saat `level_1` load
+## 🔥 Sistem Difficulty (Tingkat Kesulitan)
+Tingkat kesulitan yang kamu pilih bakal kesimpen di *autoload* `Global` dan ngaruh banget ke jumlah musuh di awal *wave*:
+- **Easy:** Musuh standar (x1).
+- **Normal:** Musuh spawn 3x lipat (x3).
+- **Hard:** Musuh spawn 5x lipat (x5)! Auto rusuh!
 
-- Easy: `start_wave_size` normal (x1)
-- Normal: `start_wave_size` x3
-- Hard: `start_wave_size` x5
+## 📂 Struktur Folder Penting
+Biar gampang nyari file:
+- `Scenes/` -> Semua tampilan layar/map ada di sini.
+- `Scripts/` -> Otaknya game (logic/kodingan).
+- `Assets/` -> Gambar (*sprite*), map (*tileset*), dan musik.
 
-Implementasi inti:
-- `Scripts/stage_select.gd`: simpan pilihan skip + difficulty
-- `Scripts/global.gd`: state global difficulty dan multiplier
-- `Scripts/level_1.gd`: apply multiplier ke semua node `EnemySpawner*`
+## 🧠 Intip Daleman Kodenya (Scripts)
 
-## Sistem Score dan HUD
-- `GameManager` (autoload) ngurus poin + signal update UI
-- Poin nambah dari:
-  - kill musuh (bat/slime/goblin)
-  - coin pickup
-- Scene `you_win` kasih escape bonus `+500`
-- High score dibandingin dan diupdate via `Global.high_score`
-
-## Struktur Folder Penting
-- `Scenes/` -> semua scene game
-- `Scripts/` -> logic gameplay
-- `Assets/` -> sprite, tileset, musik
-
-## Penjelasan Script Inti
 ### Core / Autoload
-- `Scripts/global.gd`
-  - Nyimpen data global: high score, skip tutorial, difficulty
-- `Scripts/game_manager.gd`
-  - Ngurus poin dan signal ke HUD
-- `Scripts/scene_transition.gd`
-  - Fade transition saat pindah scene
+- `global.gd`: Tempat nyimpen memori game kayak *High Score*, status skip tutorial, *difficulty*, sampai sisa *health* player waktu ganti scene.
+- `game_manager.gd`: Mandor urusan poin dan kasih *signal* ke UI/HUD.
+- `scene_transition.gd`: Ngurus transisi layar biar mulus pakai animasi *fade in/out*, plus otomatis nyimpen nyawa player sebelum pindah level!
 
-### Player dan Combat
-- `Scripts/player.gd`
-  - Movement, jump, attack, skill, damage, death
-- `Scripts/skill_slash.gd`
-  - Hitbox skill slash
+### Player & Berantem
+- `player.gd`: Segala hal tentang player: gerak, attack, skill, kena *damage*, sampai sistem mati ada di sini.
+- `skill_slash.gd`: *Hitbox* buat jurusnya player.
 
-### Enemy
-- `Scripts/bat.gd`
-  - Enemy terbang, ngejar dalam radius, kasih damage kontak
-- `Scripts/slime.gd`
-  - Enemy darat, chase horizontal, damage interval
-- `Scripts/goblin.gd`
-  - Enemy darat dengan attack timer dan animasi serang
-- `Scripts/bird.gd`
-  - Hazard area yang kasih damage ke player
+### Musuh-musuh Ngawur
+- `bat.gd`: Kelelawar nyebelin yang suka ngejar kalau kita deket, ngasih *damage* kalau nabrak.
+- `slime.gd`: Monster lendir darat yang gerak sana-sini.
+- `goblin.gd`: Musuh pinter yang punya *delay* serangan dan animasi tebas.
+- `bird.gd`: Burung lewat yang fungsinya kayak jebakan jalan (kena = *damage*).
 
-### Spawner
-- `Scripts/enemy_spawner_1.gd`
-- `Scripts/enemy_spawner_2.gd`
-- `Scripts/enemy_spawner_3.gd`
-- `Scripts/enemy_spawner_4.gd`
-- `Scripts/enemy_spawner_5.gd`
+### UI & Menu
+- `main_menu.gd`: Layar awal. Reset game (kayak reset nyawa dan poin) kejadian di sini.
+- `stage_select.gd`: Buat milih penderitaan (*difficulty*).
+- `hud.gd`: Nampilin skor kamu sekarang dan hitung mundur (*cooldown*) skill.
 
-Catatan:
-- Spawner `2` ada sedikit beda implementasi dibanding lainnya
-- Spawner `1/3/4/5` mirip pola (spawn ke parent level)
-- Perbedaan ini aku biarin buat jejak perkembangan kode nya gitu
+### Objek Lainnya
+- `health_potion.gd`: Potion buat ngisi darah sampai penuh lagi (mantap!).
+- `coin.gd`: Mungut koin = Dapet cuan (poin).
+- `door.gd`: Pintu portal buat pindah ke level berikutnya.
 
-### UI dan Menu
-- `Scripts/main_menu.gd`
-  - Tombol start, stage select, credit, exit
-- `Scripts/stage_select.gd`
-  - Toggle skip tutorial + pilih difficulty
-- `Scripts/hud.gd`
-  - Tampil poin dan cooldown skill
-- `Scripts/control.gd`
-  - UI score di scene kalah
-- `Scripts/you_win.gd`
-  - UI score di scene menang
+## 🚀 Cara Mainin Project Ini
+1. Pastiin kamu udah install **Godot 4.6** (atau minimal versi 4 yang *support* GL Compatibility).
+2. *Import* folder project ini ke Godot.
+3. Langsung aja *Play*! (Secara default bakal jalanin `main_menu`).
 
-### Trap / Object
-- `Scripts/spike.gd`
-  - Trap aktif-delay-cooldown
-- `Scripts/spike_up_down.gd`
-  - Damage area sederhana
-- `Scripts/coin.gd`
-  - Coin pickup dan tambah poin
-- `Scripts/health_potion.gd`
-  - Heal full HP
-- `Scripts/door.gd`
-  - Pindah scene saat player masuk door
-
-## Cara Jalanin Project
-1. Buka Godot 4.6
-2. Import folder project ini
-3. Jalankan project (main scene: `main_menu`)
+Enjoy the game bro, dan selamat mengumpulkan poin!

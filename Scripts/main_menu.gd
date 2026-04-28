@@ -4,6 +4,7 @@ extends Control
 func _ready():
 	get_tree().root.content_scale_factor = 1.0
 	GameManager.reset_points()
+	Global.player_health = -1
 
 
 # Aksi tombol menu nya (menu action)

@@ -47,6 +47,7 @@ func _on_hard_pressed() -> void:
 func _start_game_with_difficulty(difficulty: String) -> void:
 	# Simpan pilihan difficulty dulu, biar level_1 bisa baca nilainya
 	Global.set_difficulty(difficulty)
+	Global.player_health = -1
 
 	# Kalau skip ON langsung ke level, kalau OFF masuk tutorial dulu
 	if Global.skip_tutorial:

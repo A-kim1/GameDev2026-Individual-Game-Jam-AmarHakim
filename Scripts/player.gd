@@ -41,7 +41,11 @@ var can_use_skill := true
 @onready var skill_anim = $SkillPivot/SkillSlash/AnimationPlayer
 
 func _ready():
-	health = max_health
+	if Global.player_health != -1:
+		health = Global.player_health
+	else:
+		health = max_health
+		
 	attack_hitbox.monitoring = false
 	attack_hitbox.collision_mask = 1
 	skill_slash.monitoring = false
