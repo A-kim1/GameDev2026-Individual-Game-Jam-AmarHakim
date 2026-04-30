@@ -88,4 +88,4 @@ Biar gampang nyari file:
 2. *Import* folder project ini ke Godot.
 3. Langsung aja *Play*! (Secara default bakal jalanin `main_menu`).
 
-Enjoy the game bro, dan selamat mengumpulkan poin!
+Enjoy the game dan selamat mengumpulkan poin!

@@ -23,7 +23,7 @@ GameManager="*uid://ch2sbdbqxtpri"
 
 [display]
 
-window/size/mode=2
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/scale=5.0
 
