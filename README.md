@@ -67,7 +67,7 @@ Biar gampang nyari file:
 - `player.gd`: Segala hal tentang player: gerak, attack, skill, kena *damage*, sampai sistem mati ada di sini.
 - `skill_slash.gd`: *Hitbox* buat jurusnya player.
 
-### Musuh-musuh Ngawur
+### Musuh-musuh
 - `bat.gd`: Kelelawar nyebelin yang suka ngejar kalau kita deket, ngasih *damage* kalau nabrak.
 - `slime.gd`: Monster lendir darat yang gerak sana-sini.
 - `goblin.gd`: Musuh pinter yang punya *delay* serangan dan animasi tebas.
