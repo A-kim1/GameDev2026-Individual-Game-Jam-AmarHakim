@@ -94,17 +94,16 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 191.5
-offset_top = 108.0
+offset_top = 98.0
 offset_right = 993.5
-offset_bottom = 143.0
+offset_bottom = 133.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
 text = "https://xdeviruchi.itch.io/16-bit-fantasy-adventure-music-pack"
-metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel/Node2D2" unique_id=55757471]
-position = Vector2(149, 126)
+position = Vector2(149, 116)
 scale = Vector2(7.5, 7.5)
 texture = ExtResource("5_nto78")
 
@@ -119,17 +118,16 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 191.5
-offset_top = 108.0
+offset_top = 98.0
 offset_right = 993.5
-offset_bottom = 143.0
+offset_bottom = 133.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
 text = "https://edermunizz.itch.io/free-pixel-art-forest"
-metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel/Node2D3" unique_id=376075947]
-position = Vector2(149, 126)
+position = Vector2(149, 116)
 scale = Vector2(7.5, 7.5)
 texture = ExtResource("5_nto78")
 
@@ -144,17 +142,16 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 191.5
-offset_top = 113.0
+offset_top = 103.0
 offset_right = 993.5
-offset_bottom = 148.0
+offset_bottom = 138.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
 text = "https://chierit.itch.io/boss-demon-slime"
-metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel/Node2D4" unique_id=907525661]
-position = Vector2(149, 131)
+position = Vector2(149, 121)
 scale = Vector2(7.5, 7.5)
 texture = ExtResource("5_nto78")
 
@@ -169,17 +166,16 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 191.5
-offset_top = 117.0
+offset_top = 107.0
 offset_right = 993.5
-offset_bottom = 152.0
+offset_bottom = 142.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
 text = "https://loadedinreverse.itch.io/door-portal-open-animated"
-metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel/Node2D5" unique_id=393753810]
-position = Vector2(149, 135)
+position = Vector2(149, 125)
 scale = Vector2(7.5, 7.5)
 texture = ExtResource("5_nto78")
 
@@ -194,17 +190,41 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 191.5
-offset_top = 117.0
+offset_top = 107.0
 offset_right = 993.5
-offset_bottom = 152.0
+offset_bottom = 142.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
 text = "https://loneghostpxlart.itch.io/health-bars-and-ui"
-metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel/Node2D6" unique_id=925285349]
-position = Vector2(149, 135)
+position = Vector2(149, 125)
+scale = Vector2(7.5, 7.5)
+texture = ExtResource("5_nto78")
+
+[node name="Node2D7" type="Node2D" parent="Panel" unique_id=242200266]
+position = Vector2(-83, 255)
+
+[node name="Label" type="Label" parent="Panel/Node2D7" unique_id=299758216]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 191.5
+offset_top = 167.0
+offset_right = 993.5
+offset_bottom = 202.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "https://admurin.itch.io/enemy-galore-1"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/Node2D7" unique_id=236081782]
+position = Vector2(149, 185)
 scale = Vector2(7.5, 7.5)
 texture = ExtResource("5_nto78")
 
