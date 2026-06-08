@@ -29,6 +29,8 @@
 [ext_resource type="PackedScene" uid="uid://b8ws0y5a25km1" path="res://Scenes/health_potion.tscn" id="24_1fal7"]
 [ext_resource type="Texture2D" uid="uid://dt4bbholfg0sp" path="res://Assets/platformer_metroidvania asset pack v1.01/miscellaneous sprites/tiki_torch_props_strip_12.png" id="26_vr6f4"]
 [ext_resource type="PackedScene" uid="uid://c5nd7qrrlvmvm" path="res://Scenes/spike_up_down.tscn" id="27_u5cqy"]
+[ext_resource type="PackedScene" uid="uid://deiuyose46yb5" path="res://Scenes/golem.tscn" id="30_pm77i"]
+[ext_resource type="Script" uid="uid://bg8kga6ybhrxr" path="res://Scripts/enemy_spawner_6.gd" id="33_espwn6"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_chwpn"]
 
@@ -666,6 +668,9 @@ size = Vector2(660, 207)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1f27d"]
 size = Vector2(448, 67)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xub2v"]
+size = Vector2(534.5, 184)
+
 [sub_resource type="Animation" id="Animation_pjppf"]
 length = 0.001
 tracks/0/type = "value"
@@ -1010,10 +1015,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -2832.3494
-offset_top = -1317.3334
-offset_right = 4851.9746
-offset_bottom = 2256.6665
+offset_left = -2847.3335
+offset_top = -1324.0
+offset_right = 4836.9907
+offset_bottom = 2250.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_chwpn")
@@ -1983,6 +1988,28 @@ position = Vector2(274, 43)
 position = Vector2(220, 23.5)
 shape = SubResource("RectangleShape2D_1f27d")
 
+[node name="EnemySpawner6" type="Node2D" parent="." unique_id=1416988165]
+script = ExtResource("33_espwn6")
+enemy_scene = ExtResource("30_pm77i")
+
+[node name="GolemSpawnPoint" type="Marker2D" parent="EnemySpawner6" unique_id=1500919936]
+position = Vector2(-433, -100)
+
+[node name="GolemSpawnPoint2" type="Marker2D" parent="EnemySpawner6" unique_id=66735819]
+position = Vector2(-302, -45)
+
+[node name="GolemSpawnPoint3" type="Marker2D" parent="EnemySpawner6" unique_id=1362705415]
+position = Vector2(-150, -88)
+
+[node name="GolemSpawnPoint4" type="Marker2D" parent="EnemySpawner6" unique_id=1131017180]
+position = Vector2(-7, -72)
+
+[node name="Area2D" type="Area2D" parent="EnemySpawner6" unique_id=1874065246]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemySpawner6/Area2D" unique_id=931413522]
+position = Vector2(-213.25, -75)
+shape = SubResource("RectangleShape2D_xub2v")
+
 [node name="Obstacle" type="Node" parent="." unique_id=1087838294]
 
 [node name="bird" parent="Obstacle" unique_id=1915458694 instance=ExtResource("15_oovug")]
@@ -2051,6 +2078,7 @@ rotation = -3.1415925
 [node name="Text" type="Node" parent="." unique_id=829966203]
 
 [node name="Label" type="Label" parent="Text" unique_id=1343250903]
+z_index = -100
 offset_left = -142.0
 offset_top = -55.0
 offset_right = -22.0
